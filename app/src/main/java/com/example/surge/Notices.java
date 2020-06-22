@@ -1,5 +1,6 @@
 package com.example.surge;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,8 +32,7 @@ public class Notices extends AppCompatActivity {
         login = findViewById(R.id.login);
 
         not1 = new Notice();
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-        dbRef = FirebaseDatabase.getInstance().getReference();
+        dbRef = FirebaseDatabase.getInstance().getReference().child("Notice");
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -46,8 +48,21 @@ public class Notices extends AppCompatActivity {
                  else {
                     not1.setName(editText2.getText().toString().trim());
 
-                    dbRef.child("Notice").push().setValue(not1);
-                    Toast.makeText(getApplicationContext(), "Data Added", Toast.LENGTH_SHORT).show();
+                    dbRef.push().setValue(not1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task)
+                        {
+                            if(task.isSuccessful())
+                            {
+                                Toast.makeText(getApplicationContext(), "Data Added", Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(getApplicationContext(), "Failed to add data", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
                 }
             }
         });
