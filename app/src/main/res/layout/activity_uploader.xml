@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".uploader">
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="133dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/yellow"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:text="Take Photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.806" />
+
+
+    <ImageView
+        android:id="@+id/upload"
+        android:layout_width="329dp"
+        android:layout_height="205dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/ash1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="277dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/ash1"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:gravity="center_horizontal"
+        android:text="Upload Disaster Images"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="330dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="200dp"
+        android:elevation="@dimen/cardview_default_elevation"        app:layout_constraintBottom_toBottomOf="@+id/bottomnav"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/ash1"
+        app:layout_constraintTop_toTopOf="@+id/upload"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginLeft="44dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottomnav"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+    <Button
+        android:id="@+id/choose"
+        android:layout_width="125dp"
+        android:layout_height="46dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/yellow"
+        android:text="Choose"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.793"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.799" />
+
+    <Button
+        android:id="@+id/view"
+        android:layout_width="137dp"
+        android:layout_height="44dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/yellow"
+        android:text="Upload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="251dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/ash1"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upload" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="346dp"
+        android:layout_height="651dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.125" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
